@@ -1,12 +1,10 @@
-import sys
-sys.dont_write_bytecode = True
 import os
 
 
 def importmodule(moduleName):
 
 	if not os.path.isfile(moduleName): 
-		raise ModuleNotFoundError("File Not Found: " + moduleName)
+		raise FileNotFoundError(moduleName)
 
 	name = os.path.basename(moduleName)
 	name = name.replace(".py","")
